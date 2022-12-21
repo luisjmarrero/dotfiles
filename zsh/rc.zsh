@@ -27,6 +27,13 @@ precmd() {
     [ ! -f  ~/.zsh/alias.zsh ] || source ~/.zsh/alias.zsh
 }
 
+export STARSHIP_CONFIG=~/.dotfiles/starship/starship.toml
+
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$PWD") \007"
+}
+precmd_functions+=(set_win_title)
+
 eval "$(starship init zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

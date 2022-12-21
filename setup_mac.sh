@@ -52,8 +52,8 @@ function configure {
     ln -sf ~/.dotfiles/zsh/work.zsh ~/.zsh/work.zsh
 
     # configure starship
-    mkdir -p ~/.config
-    ln -sf ~/.dotfiles/startship/starship.toml ~/.config/starship.toml
+    # mkdir -p ~/.config
+    # ln -sf ~/.dotfiles/startship/starship.toml ~/.config/starship.toml
 
     # configure amethyst
     ln -sf ~/.dotfiles/amethyst/amethyst.yml ~/.amethyst.yml
