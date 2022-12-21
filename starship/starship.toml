@@ -1,0 +1,148 @@
+add_newline = true
+
+continuation_prompt = ""
+
+[aws]
+symbol = "  "
+
+[c]
+symbol = " "
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
+show_milliseconds = false
+disabled = false
+style = "bold italic yellow"
+
+[dart]
+symbol = " "
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = " ~"
+read_only = "  "
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[docker_context]
+symbol = " "
+disabled = false
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile", "Dockerfile-local"]
+
+[git_branch]
+symbol = " "
+
+[git_status]
+style = 'bright-green'
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_only = false
+format = '[at $ssh_symbol$hostname ]($style)'
+trim_at = "."
+disabled = true
+
+[java]
+format = '[${symbol}(${version} )]($style)'
+symbol = " "
+style = "red"
+version_format = 'v${raw}'
+
+[kubernetes]
+format = 'on [ $context\($namespace\)](bold purple) '
+disabled = true
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os]
+format = "[$symbol]($style)"
+disabled = true
+style = 'white'
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[package]
+symbol = " "
+format = '[ $symbol$version]($style) '
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[username]
+format = "[$user ]($style)"
+disabled = true
+show_always = false
