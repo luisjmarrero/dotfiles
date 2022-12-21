@@ -67,3 +67,5 @@ function take() {
 }
 
 alias rm=trash # brew install trash
+
+alias history='history -E'
