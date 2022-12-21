@@ -13,7 +13,7 @@ setopt EXTENDED_HISTORY  # record command start time
 
 # plugins
 [ ! -f ~/.dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] || source ~/.dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-[ ! -f ~/.dotfiles/zsh/plugins/zsh-autosuggestionszsh-autosuggestions-master/zsh-autosuggestions.zsh ] || source ~/.dotfiles/zsh/plugins/zsh-autosuggestionszsh-autosuggestions-master/zsh-autosuggestions.zsh
+[ ! -f ~/.dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] || source ~/.dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # hot reload aliases
 precmd() {

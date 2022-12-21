@@ -46,3 +46,14 @@ git clone git@github.com:luisjmarrero/dotfiles.git .dotfiles
 > gerate view: `lt --level=2 --sort=type --git-ignore --ignore-glob=".git*|README.md|plugins|*assets*"`
 
 ## Tools
+
+### MacOS
+- [homebrew](https://brew.sh/)
+- [sdkaman](https://sdkman.io/)
+- [starship](https://starship.rs/)
+- [amethyst](https://ianyh.com/amethyst/)
+
+## zsh plugins
+
+- [fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
