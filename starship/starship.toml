@@ -11,10 +11,14 @@ $git_state\
 $git_metrics\
 $git_status\
 $hg_branch\
+\n\
 $character"""
 
 # move the rest of the prompt to the right
-right_format = """$all"""
+right_format = """
+$java\
+$package\
+$all"""
 
 [aws]
 symbol = "  "
@@ -38,22 +42,16 @@ symbol = " "
 
 [directory]
 truncation_length = 3
-truncation_symbol = "…/"
+truncation_symbol = " "
 home_symbol = " ~"
 read_only = "  "
-format = '[ $path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style)[$read_only]($read_only_style) '
 
 [directory.substitutions]
 "Documents" = " "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
-
-[docker_context]
-symbol = " "
-disabled = false
-only_with_files = true
-detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile", "Dockerfile-local"]
 
 [git_branch]
 symbol = " "
@@ -143,7 +141,7 @@ Windows = " "
 
 [package]
 symbol = " "
-format = '[ $symbol$version]($style) '
+format = '[$symbol$version]($style) '
 
 [python]
 symbol = " "
@@ -158,6 +156,20 @@ symbol = " "
 symbol = " "
 
 [username]
-format = "[$user ]($style)"
 disabled = true
-show_always = false
+
+[custom.maven-repo]
+description = 'shows current custom repository url from ~/.m2/settings.xml'
+command = """ grep '<url>' ~/.m2/settings.xml | sed 's@.*<url>\\(.*\\)</url>.*@\\1@' | sed -E -e 's_.*://([^/@]*@)?([^/:]+).*_\\2_' | head -1 """
+shell = 'zsh'
+detect_files = ['pom.xml', 'gradle.build', 'gradle.settings']
+format = '[$symbol$output]($style)'
+symbol = ' '
+
+[custom.docker-enabled]
+description = "Shows the docker symbol if the current directory has Dockerfile or docker-compose.yml files"
+command = 'echo '
+files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
+when = """ command -v docker &> /dev/null; exit (echo $?); """
+format = '[ $output ]($style)'
+style = 'blue'
