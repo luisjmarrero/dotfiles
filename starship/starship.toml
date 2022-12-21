@@ -165,6 +165,7 @@ shell = 'zsh'
 detect_files = ['pom.xml', 'gradle.build', 'gradle.settings']
 format = '[$symbol$output]($style)'
 symbol = ' '
+disabled = true
 
 [custom.docker-enabled]
 description = "Shows the docker symbol if the current directory has Dockerfile or docker-compose.yml files"
