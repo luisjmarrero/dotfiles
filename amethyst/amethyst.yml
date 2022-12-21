@@ -1,0 +1,48 @@
+# Use tall and fullscreen layouts
+layouts:
+    - floating
+    - tall
+    - fullscreen
+    - two-pane
+    - column
+    - row
+
+# mod1: option + shift
+mod1:
+    - option
+    - shift
+# mod2: option + shift + control
+mod2:
+    - option
+    - shift
+    - control
+
+# Modify the amethyst relaunch to use x and not z
+relaunch-amethyst:
+    mod: mod2
+    key: x
+
+# Enable focus-follows-mouse
+mouse-follows-focus: false
+focus-follows-mouse: false
+
+# Add 10px margin between windows
+window-margins: true
+window-margin-size: 10
+
+# dragging and dropping windows on to each other should swap their positions 
+mouse-swaps-windows: true
+
+# changing the frame of a window with the mouse should update the layout to accommodate the change
+mouse-resizes-windows: true
+
+enables-layout-hud-on-space-change: false
+
+# ignore list (always float)
+# this does not work for the moment, manually add apps by UI
+# floating:
+  # - System Preferences
+  # - Activity Monitor
+  # - 1Password
+  
+  
