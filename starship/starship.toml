@@ -57,6 +57,9 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 symbol = " "
 
 [git_status]
+untracked = "[ ](#FFFF00)"
+stashed = " "
+modified = "[ ](#FFA500) "
 style = 'bright-green'
 
 [golang]
