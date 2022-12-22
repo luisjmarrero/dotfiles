@@ -36,6 +36,11 @@ precmd_functions+=(set_win_title)
 
 eval "$(starship init zsh)"
 
+if uname -r |grep -q 'WSL2' ; then
+    # Set PATH, MANPATH, etc., for Homebrew.
+    [ ! -f /home/linuxbrew/.linuxbrew/bin/brew ] || eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

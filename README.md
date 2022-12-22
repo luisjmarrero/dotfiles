@@ -14,6 +14,12 @@ git clone git@github.com:luisjmarrero/dotfiles.git .dotfiles
 ./setup_mac.sh
 ```
 
+### On Ubuntu
+
+```sh
+./setup_ubuntu.sh
+```
+
 ## Final Result View
 
 ![Result](_assets/result.png)
@@ -28,19 +34,14 @@ git clone git@github.com:luisjmarrero/dotfiles.git .dotfiles
     ├──  amethyst
     │  └──  amethyst.yml
     ├──  bin
-    │  ├──  install_amethyst.sh
-    │  ├──  install_brew.sh
-    │  ├──  install_brew_packages.sh
-    │  ├──  install_sdkman.sh
-    │  ├──  install_starship.sh
-    │  └──  install_zsh_plugins.sh
+    │  ├──  [ shell scripts ]
     ├──  starship
     │  └──  starship.toml
     ├──  zsh
     │  ├──  alias.zsh
     │  ├──  rc.zsh
-    │  └──  work.zsh
-    └──  setup_mac.sh
+    ├──  setup_mac.sh
+    └──  setup_ubuntu.sh
 ```
 
 > gerate view: `lt --level=2 --sort=type --git-ignore --ignore-glob=".git*|README.md|plugins|*assets*"`
