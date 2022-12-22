@@ -23,6 +23,10 @@ function gcp() {
   git commit -m $1 && git push
 }
 
+function gchb() {
+   git checkout -b $1
+}
+
 # clear branches
 function gcb() {
   git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d
@@ -66,6 +70,11 @@ function take() {
   cd $1
 }
 
-alias rm=trash # brew install trash
+
+if uname -r | grep -q 'Darwin' ; then
+    # FIXME: set right condition for macos
+    alias rm=trash # brew install trash
+fi
+
 
 alias history='history -E'
