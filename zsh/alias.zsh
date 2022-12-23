@@ -70,9 +70,7 @@ function take() {
   cd $1
 }
 
-
-if uname -r | grep -q 'Darwin' ; then
-    # FIXME: set right condition for macos
+if uname | grep -q 'Darwin' ; then
     alias rm=trash # brew install trash
 fi
 
