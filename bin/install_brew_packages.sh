@@ -23,3 +23,6 @@ brew install rmlint
 
 # trash
 brew install trash
+
+# jq
+brew install jq

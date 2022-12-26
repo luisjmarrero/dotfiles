@@ -76,3 +76,7 @@ fi
 
 
 alias history='history -E'
+
+funtion curlp() {
+  curl $@ | jq
+}
