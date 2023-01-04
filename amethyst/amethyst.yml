@@ -1,16 +1,16 @@
 # Use tall and fullscreen layouts
 layouts:
     - floating
+    - bsp
     - tall
     - fullscreen
-    - two-pane
-    - column
     - row
 
 # mod1: option + shift
 mod1:
     - option
     - shift
+
 # mod2: option + shift + control
 mod2:
     - option
@@ -36,7 +36,7 @@ mouse-swaps-windows: true
 # changing the frame of a window with the mouse should update the layout to accommodate the change
 mouse-resizes-windows: true
 
-enables-layout-hud-on-space-change: false
+enables-layout-hud-on-space-change: true
 
 # ignore list (always float)
 # this does not work for the moment, manually add apps by UI
