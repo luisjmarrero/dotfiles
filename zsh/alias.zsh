@@ -80,3 +80,5 @@ alias history='history -E'
 funtion curlp() {
   curl $@ | jq
 }
+
+alias vtop="vtop --theme brew"

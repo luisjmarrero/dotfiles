@@ -15,6 +15,10 @@ setopt hist_find_no_dups
 bindkey '\e[H'    beginning-of-line
 bindkey '\e[F'    end-of-line
 
+# autocompletion using arrow keys (based on history)
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+
 [ ! -f  ~/.zsh/alias.zsh ] || source ~/.zsh/alias.zsh
 [ ! -f  ~/.zsh/work.zsh ] || source ~/.zsh/work.zsh
 
