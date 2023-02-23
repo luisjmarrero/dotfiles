@@ -41,6 +41,10 @@ function dcuf() {
   docker compose up -d --build --remove-orphans --force-recreate
 }
 
+function dcd() {
+  docker compose down --remove-orphans
+}
+
 function dsh() {
   #do things with parameters like $1 such as
   echo "running sh into $(docker ps | grep "$1" | awk '{print $1 " " $2}')"
