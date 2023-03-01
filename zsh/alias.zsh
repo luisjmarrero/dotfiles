@@ -86,3 +86,7 @@ funtion curlp() {
 }
 
 alias vtop="vtop --theme brew"
+
+if [ -x "$(command -v bat)" ]; then
+    alias batcat="bat"
+fi
