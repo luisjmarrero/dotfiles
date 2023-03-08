@@ -10,8 +10,8 @@ env:
 
 window:
   dimensions:
-    columns: 130
-    lines: 35
+    columns: 165
+    lines: 50
 
 font:
   normal:
@@ -26,7 +26,7 @@ font:
   bold_italic:
     family: UbuntuMono Nerd Font
     style: Bold Italic
-  size: 12
+  size: 11
   offset:
     x: 1
     # y: 1
@@ -41,3 +41,7 @@ cursor:
 #   - { key: W, mods: Command, action: Quit }
 
 live_config_reload: true
+
+
+import:
+  - /home/luis.marrero/.dotfiles/alacritty/alacritty-master/dracula.yml
