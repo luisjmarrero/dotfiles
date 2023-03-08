@@ -1,5 +1,10 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-
+shell:
+  program: /bin/zsh
+  # args:
+    # - -l
+    # - -c
+    # - "tmux"
 env:
   TERM: xterm-256color
 
@@ -30,5 +35,9 @@ cursor:
   style:
     shape: Beam
     blinking: On
+
+# key_bindings:
+#   # remove the line below!
+#   - { key: W, mods: Command, action: Quit }
 
 live_config_reload: true
