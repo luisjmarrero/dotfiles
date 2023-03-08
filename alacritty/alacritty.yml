@@ -12,6 +12,7 @@ window:
   dimensions:
     columns: 165
     lines: 50
+  opacity: 0.98
 
 font:
   normal:
