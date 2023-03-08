@@ -4,6 +4,7 @@ alias sync-vault="git pull && git add . && git commit -m "sync vault" && git pus
 # exa 
 if [ -x "$(command -v exa)" ]; then
     alias ls="exa --icons"
+    alias lsa="exa --icons --all"
     alias la="exa --long --all --group --icons"
     alias l='exa -lah --icons'
     alias lt='exa --tree --icons --all'
