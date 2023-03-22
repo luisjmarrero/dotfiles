@@ -20,9 +20,11 @@ git clone git@github.com:luisjmarrero/dotfiles.git .dotfiles
 ./setup_ubuntu.sh
 ```
 
-## Final Result View
+## Final Result Views
 
 ![Result](_assets/result.png)
+
+![Ubuntu](_assets/ubuntu.png)
 
 > `neofetch --disable resolution uptime title`
 
@@ -31,15 +33,30 @@ git clone git@github.com:luisjmarrero/dotfiles.git .dotfiles
 ```
  ~
 └──  .dotfiles
+    ├──  alacritty
+    │  ├──  alacritty-master
+    │  └──  alacritty.yml
     ├──  amethyst
     │  └──  amethyst.yml
     ├──  bin
-    │  ├──  [ shell scripts ]
+    │  ├──  backup_files.sh
+    │  ├──  configure_tools_macos.sh
+    │  ├──  configure_tools_ubuntu.sh
+    │  ├──  install_amethyst.sh
+    │  ├──  install_brew.sh
+    │  ├──  install_brew_packages.sh
+    │  ├──  install_sdkman.sh
+    │  ├──  install_starship.sh
+    │  ├──  install_tools_macos.sh
+    │  ├──  install_tools_ubuntu.sh
+    │  └──  install_zsh_plugins.sh
     ├──  starship
     │  └──  starship.toml
+    ├──  tmux
+    │  └──  tmux.conf
     ├──  zsh
     │  ├──  alias.zsh
-    │  ├──  rc.zsh
+    │  └──  rc.zsh
     ├──  setup_mac.sh
     └──  setup_ubuntu.sh
 ```

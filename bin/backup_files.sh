@@ -17,3 +17,10 @@ mkdir -p ~/.dotfiles-backups/.config
 
 # amethyst
 [ ! -f ~/.amethyst.yml ] || cp ~/.amethyst.yml  ~/.dotfiles-backups/.amethyst.yml.bk.${currentdate}
+
+# tmux
+[ ! -f ~/.tmux.conf ] || cp ~/.tmux.conf  ~/.dotfiles-backups/.tmux.config.bk.${currentdate}
+
+# alacritty
+mkdir -p ~/.dotfiles-backups/.config/alacritty
+[ ! -f ~/.config/alacritty/alacritty.yml ] || cp ~/.config/alacritty/alacritty.yml  ~/.dotfiles-backups/.config/alacritty/alacritty.yml.bk.${currentdate}

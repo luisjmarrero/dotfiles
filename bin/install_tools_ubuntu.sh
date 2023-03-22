@@ -12,3 +12,5 @@ sh bin/install_sdkman.sh
 
 # install starship
 sh bin/install_starship.sh
+
+## alacritty and tmux not included...
