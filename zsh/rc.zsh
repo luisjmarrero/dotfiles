@@ -20,6 +20,7 @@ bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
 [ ! -f  ~/.zsh/alias.zsh ] || source ~/.zsh/alias.zsh
+[ ! -f  ~/.zsh/exports.zsh ] || source ~/.zsh/exports.zsh
 [ ! -f  ~/.zsh/work.zsh ] || source ~/.zsh/work.zsh
 
 # plugins
