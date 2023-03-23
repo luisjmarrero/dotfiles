@@ -21,3 +21,7 @@ ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 # nvim
 mkdir -p ~/.config/nvim
 ln -sf ~/.dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+
+# nvim plugins
+mkdir -p ~/.config/nvim/lua/custom/plugins
+ln -sf ~/.dotfiles/nvim/lua/custom/plugins/filetree.lua ~/.config/nvim/lua/custom/plugins/filetree.lua
