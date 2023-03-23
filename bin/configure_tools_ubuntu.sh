@@ -17,3 +17,7 @@ ln -sf ~/.dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.ym
 
 # tmux
 ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+
+# nvim
+mkdir -p ~/.config/nvim
+ln -sf ~/.dotfiles/nvim/init.lua ~/.config/nvim/init.lua
