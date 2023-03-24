@@ -24,3 +24,10 @@ mkdir -p ~/.dotfiles-backups/.config
 # alacritty
 mkdir -p ~/.dotfiles-backups/.config/alacritty
 [ ! -f ~/.config/alacritty/alacritty.yml ] || cp ~/.config/alacritty/alacritty.yml  ~/.dotfiles-backups/.config/alacritty/alacritty.yml.bk.${currentdate}
+
+# nvim
+mkdir -p ~/.dotfiles-backups/.config/nvim
+[ ! -f ~/.config/nvim/init.lua ] || cp ~/.config/nvim/init.lua ~/.dotfiles-backups/.config/nvim/init.lua.bk.${currentdate}
+
+# nvim plugins
+[ ! -f ~/.config/nvim/lua/custom/plugins/filetree.lua ] cp ~/.config/nvim/lua/custom/plugins/filetree.lua ~/.dotfiles-backups/.config/nvim/lua/custom/plugins/filetree.lua.bk.${currentdate}
