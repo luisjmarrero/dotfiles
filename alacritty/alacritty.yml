@@ -41,8 +41,10 @@ cursor:
 #   # remove the line below!
 #   - { key: W, mods: Command, action: Quit }
 
-live_config_reload: true
-
-
 import:
-  - /home/luis.marrero/.dotfiles/alacritty/alacritty-master/dracula.yml
+  # dracula theme
+  # - /home/luis.marrero/.dotfiles/alacritty/colorschemes/dracula.yml
+  # catppuccin frappe theme
+  - /home/luis.marrero/.dotfiles/alacritty/colorsschemes/catppuccin-frappe.yml
+
+# live_config_reload: true
