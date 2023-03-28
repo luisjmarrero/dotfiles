@@ -44,9 +44,9 @@ cursor:
     shape: Beam
     blinking: On
 
-# key_bindings:
-#   # remove the line below!
-#   - { key: W, mods: Command, action: Quit }
+key_bindings:
+  - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp   }
+  - { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
 
 import:
   # dracula theme
