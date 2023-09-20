@@ -1,6 +1,6 @@
 add_newline = true
 
-continuation_prompt = ""
+continuation_prompt = '▶▶ '
 
 # A minimal left prompt
 format = """
@@ -27,8 +27,8 @@ symbol = "  "
 symbol = " "
 
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[](bold red)"
+success_symbol = "[](bold green)"
+error_symbol = "[x](bold red)"
 
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
@@ -43,7 +43,7 @@ symbol = " "
 [directory]
 truncation_length = 3
 truncation_symbol = " "
-home_symbol = " ~"
+home_symbol = "󰋜 ~"
 read_only = "  "
 format = '[$path]($style)[$read_only]($read_only_style) '
 
@@ -58,7 +58,7 @@ symbol = " "
 
 [git_status]
 untracked = "[ ](#FFFF00)"
-stashed = " "
+stashed = "󰗄 "
 modified = "[ ](#FFA500) "
 style = 'bright-green'
 
@@ -88,7 +88,7 @@ format = 'on [ $context\($namespace\)](bold purple) '
 disabled = true
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [nim]
 symbol = " "
