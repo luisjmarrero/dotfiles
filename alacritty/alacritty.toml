@@ -46,6 +46,7 @@ mods = "Shift"
 [shell]
 # program = "/bin/zsh"
 program = "/usr/bin/tmux"
+# to attach to any open tmux session
 args = [ "new-session", "-A", "-s", "main" ]
 
 
