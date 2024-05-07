@@ -55,3 +55,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Created by `pipx` on 2024-04-18 16:37:30
 export PATH="$PATH:/home/lmarrero/.local/bin"
+
+# Set up fzf key bindings and fuzzy completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"

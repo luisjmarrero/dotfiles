@@ -88,8 +88,8 @@ funtion curlp() {
 
 alias vtop="vtop --theme brew"
 
-if [ -x "$(command -v bat)" ]; then
-    alias batcat="bat"
-fi
+# if [ -x "$(command -v bat)" ]; then
+#     alias bat="batcat"
+# fi
 
 alias grep="grep --color=always"
