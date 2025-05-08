@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# zsh
-brew install zsh
-
 # curl
 brew install curl
 
@@ -10,7 +7,7 @@ brew install curl
 brew install bat
 
 # exa
-brew install exa
+brew install eza
 
 # nvm
 brew install nvm

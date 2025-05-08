@@ -1,19 +1,15 @@
-# sync obsidian vault to git
-alias sync-vault="git pull && git add . && git commit -m "sync vault" && git push origin main"
-
-# exa 
-if [ -x "$(command -v exa)" ]; then
-    alias ls="exa --icons"
-    alias lsa="exa --icons --all"
-    alias la="exa --long --all --group --icons"
-    alias l='exa -lah --icons'
-    alias lt='exa --tree --icons --all'
+# eza
+if [ -x "$(command -v eza)" ]; then
+    alias ls="eza --icons"
+    alias lsa="eza --icons --all"
+    alias la="eza --long --all --group --icons"
+    alias l='eza -lah --icons'
+    alias lt='eza --tree --icons --all'
 fi
-
 
 # git aliases
 function gacpm() {
-  git add . && git commit -m $1 && git push origin 
+  git add . && git commit -m $1 && git push origin
 }
 
 function gacp() {
@@ -26,6 +22,10 @@ function gcp() {
 
 function gchb() {
    git checkout -b $1
+}
+
+function glog() {
+    git log --all --graph --decorate --oneline --pretty=format:"%h - %an: %s"
 }
 
 # clear branches
