@@ -25,7 +25,11 @@ function gchb() {
 }
 
 function glog() {
-    git log --all --graph --decorate --oneline --pretty=format:"%h - %an: %s"
+    git log --all --graph --decorate -n 25 --oneline --pretty=format:"%h - %cn %ah: %s [branch: %D]"
+}
+
+function gsync() {
+    git fetch --all --prune && git pull
 }
 
 # clear branches

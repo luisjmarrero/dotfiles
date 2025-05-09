@@ -31,7 +31,7 @@ success_symbol = "[](bold green)"
 error_symbol = "[x](bold red)"
 
 [cmd_duration]
-min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+min_time = 10_000                    # Show command duration over 10,000 milliseconds (=10 sec)
 format = " took [$duration]($style)"
 show_milliseconds = false
 disabled = false
@@ -98,6 +98,7 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+format = '[$symbol($version )]($style)'
 
 [os]
 format = "[$symbol]($style)"
@@ -143,14 +144,15 @@ Unknown = " "
 Windows = " "
 
 [package]
-symbol = " "
-format = '[$symbol$version]($style) '
+symbol = '📦 '
+disabled = true
 
 [python]
 symbol = " "
 
 [ruby]
 symbol = " "
+format = '[$symbol($version )]($style)'
 
 [rust]
 symbol = " "
@@ -159,15 +161,6 @@ symbol = " "
 symbol = " "
 
 [username]
-disabled = true
-
-[custom.maven-repo]
-description = 'shows current custom repository url from ~/.m2/settings.xml'
-command = """ grep '<url>' ~/.m2/settings.xml | sed 's@.*<url>\\(.*\\)</url>.*@\\1@' | sed -E -e 's_.*://([^/@]*@)?([^/:]+).*_\\2_' | head -1 """
-shell = 'zsh'
-detect_files = ['pom.xml', 'gradle.build', 'gradle.settings']
-format = '[$symbol$output]($style)'
-symbol = ' '
 disabled = true
 
 [custom.docker-enabled]

@@ -63,5 +63,5 @@ source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring
 source <(fzf --zsh)
 
 
-
-
+# DO NOT COMMIT ZONE
+source ~/.globo_profile
