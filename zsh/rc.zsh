@@ -61,7 +61,3 @@ source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-
-
-# DO NOT COMMIT ZONE
-source ~/.globo_profile
