@@ -6,8 +6,6 @@ brew install font-meslo-lg-nerd-font
 
 brew install zsh-autosuggestions
 
-brew install zsh-syntax-highlighting
-
 brew install eza
 
 brew install zoxide
