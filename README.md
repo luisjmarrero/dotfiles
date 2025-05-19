@@ -12,4 +12,4 @@ git clone git@github.com:luisjmarrero/dotfiles.git .dotfiles
 
 ## Showcase
 
-WIP
+![showcase](showcase.png)
