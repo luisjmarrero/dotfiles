@@ -1,3 +1,5 @@
+alias reload-zsh="source ~/.zshrc"
+
 # eza
 if [ -x "$(command -v eza)" ]; then
     alias ls="eza --icons"
@@ -7,14 +9,20 @@ if [ -x "$(command -v eza)" ]; then
     alias lt='eza --tree --icons --all'
 fi
 
-# git aliases
-function gacpm() {
-  git add . && git commit -m $1 && git push origin
-}
+# ---- Zoxide (better cd) ----
+alias cd="z"
 
-function gacp() {
-  git add . && git commit -m $1 && git push
-}
+# git aliases
+# function gacpm() {
+#   git add . && git commit -m $1 && git push origin
+# }
+
+# do not use while in current work
+# function gacp() {
+#   git add . && git commit -m $1 && git push
+# }
+
+alias gfetch='git fetch --all'
 
 function gcp() {
   git commit -m $1 && git push
@@ -25,7 +33,9 @@ function gchb() {
 }
 
 function glog() {
-    git log --all --graph --decorate -n 25 --oneline --pretty=format:"%h - %cn %ah: %s [branch: %D]"
+    # git log --all --graph --decorate -n 25 --oneline --pretty=format:"%h - %cn %ah: author: %an - %s [branch: %D]"
+    # git log --oneline --decorate --graph --all -n 20
+    git log --all --graph --decorate -n 25 --oneline --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 }
 
 function gsync() {

@@ -1,3 +1,4 @@
+# Original
 add_newline = true
 
 continuation_prompt = '▶▶ '
@@ -42,7 +43,7 @@ symbol = " "
 
 [directory]
 truncation_length = 3
-truncation_symbol = " "
+truncation_symbol = " 󰝰 "
 home_symbol = "󰋜 ~"
 read_only = "  "
 format = '[$path]($style)[$read_only]($read_only_style) '
@@ -54,13 +55,12 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 "Pictures" = " "
 
 [git_branch]
-symbol = " "
+# symbol = " "
+symbol = " "
 
 [git_status]
-untracked = "[ ](#FFFF00)"
-stashed = "󰗄 "
-modified = "[ ](#FFA500) "
-style = 'bright-green'
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "red bold"
 
 [golang]
 symbol = " "
