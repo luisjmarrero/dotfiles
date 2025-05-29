@@ -1,4 +1,5 @@
-# Original
+palette = 'catppuccin_mocha'
+
 add_newline = true
 
 continuation_prompt = '▶▶ '
@@ -29,14 +30,14 @@ symbol = " "
 
 [character]
 success_symbol = "[](bold green)"
-error_symbol = "[x](bold red)"
+error_symbol = "[✘](bold red)"
 
 [cmd_duration]
 min_time = 10_000                    # Show command duration over 10,000 milliseconds (=10 sec)
 format = " took [$duration]($style)"
 show_milliseconds = false
 disabled = false
-style = "bold italic yellow"
+style = "italic yellow"
 
 [dart]
 symbol = " "
@@ -46,6 +47,8 @@ truncation_length = 3
 truncation_symbol = " 󰝰 "
 home_symbol = "󰋜 ~"
 read_only = "  "
+style = "bold sapphire"
+read_only_style = "bold red"
 format = '[$path]($style)[$read_only]($read_only_style) '
 
 [directory.substitutions]
@@ -57,10 +60,25 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 [git_branch]
 # symbol = " "
 symbol = " "
+style = "bold mauve"
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "red bold"
+format = '([\[$all_status $ahead_behind\]]($style))'
+# style = "red bold"
+style = "bold flamingo"
+
+conflicted = ""    # nf-dev-git_merge
+# ahead      = ""    # nf-oct-arrow_up
+behind     = ""    # nf-oct-arrow_down
+diverged   = ""    # nf-dev-git_branch
+# up_to_date = "✓"
+up_to_date = ''
+untracked  = ""    # nf-oct-file
+stashed    = ""    # nf-oct-archive
+modified   = ""    # nf-oct-pencil
+staged     = ""    # nf-fa-plus_square
+renamed    = ""    # nf-oct-arrow_right
+deleted    = ""    # nf-oct-trashcan
 
 [golang]
 symbol = " "
@@ -98,6 +116,7 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+style = "bold green"
 format = '[$symbol($version )]($style)'
 
 [os]
@@ -149,9 +168,11 @@ disabled = true
 
 [python]
 symbol = " "
+style = "bold sky"
 
 [ruby]
 symbol = " "
+style = "bold maroon"
 format = '[$symbol($version )]($style)'
 
 [rust]
@@ -169,4 +190,32 @@ command = 'echo '
 files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
 when = """ command -v docker &> /dev/null; exit (echo $?); """
 format = '[ $output ]($style)'
-style = 'blue'
+style = "bold blue"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
