@@ -52,7 +52,7 @@ config.mouse_bindings = {
 }
 
 -- config.default_prog = { '/bin/zsh', '-i' }
-config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "local" }
+config.default_prog = { "/bin/zsh", "-c", "/opt/homebrew/bin/tmux new-session -A -s local; exec /bin/zsh" }
 
 -- and finally, return the configuration to wezterm
 return config

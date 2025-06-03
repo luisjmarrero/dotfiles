@@ -31,7 +31,7 @@ alias gcb='git checkout -b'
 alias gglog='gf && glog'
 
 function gcp() {
-  git commit -m $1 && git push
+  git commit -m "$*" && git push
 }
 
 # clear branches
@@ -65,7 +65,7 @@ function dbash() {
 }
 
 # maven
-funtion pmvn() {
+function pmvn() {
   rm -rf ~/.m2/repository
 }
 
@@ -77,8 +77,8 @@ function pnode() {
 # directories
 
 function take() {
-  mkdir -p $1
-  cd $1
+  mkdir -p "$1"
+  cd "$1"
 }
 
 if uname | grep -q 'Darwin' ; then
@@ -86,9 +86,9 @@ if uname | grep -q 'Darwin' ; then
 fi
 
 
-alias history='history -E | fzf'
+alias fhistory='history | fzf'
 
-funtion curlp() {
+function curlp() {
   curl $@ | jq
 }
 
@@ -102,12 +102,43 @@ alias grep="grep --color=always"
 
 alias fzff="fzf --preview 'bat --style=numbers --color=always {}'"
 
-# alias kill-app="kill -9 $(ps aux | fzf | awk '{print $2}')"
+function kill-app() {
+  pid=$(ps aux | fzf | awk '{print $2}')
+  echo "Killing PID: $pid"
+  kill -9 "$pid"
+}
+
+alias h='fc -ln -$1'
 
 # rails aliases
 
 alias rc='rails console'
 alias rcs='rails console --sandbox'
+
+# Disable globbing for bundle exec
+function bundle() {
+  if [[ $1 == "exec" ]]; then
+    noglob command bundle "$@"
+  else
+    command bundle "$@"
+  fi
+}
+
 alias be="bundle exec"
 
 alias cat='bat --paging=never'
+
+batdiff() {
+    git diff --name-only --relative --diff-filter=d | xargs bat --diff
+}
+
+alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break!'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+        
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work!'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+
