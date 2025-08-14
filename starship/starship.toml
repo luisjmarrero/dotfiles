@@ -23,7 +23,7 @@ $package\
 $all"""
 
 [aws]
-symbol = "  "
+symbol = " "
 
 [c]
 symbol = " "
@@ -52,8 +52,8 @@ read_only_style = "bold red"
 format = '[$path]($style)[$read_only]($read_only_style) '
 
 [directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
+"Documents" = " 󰈙 "
+"Downloads" = ""
 "Music" = " "
 "Pictures" = " "
 

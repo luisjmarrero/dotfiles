@@ -86,7 +86,14 @@ if uname | grep -q 'Darwin' ; then
 fi
 
 
-alias fhistory='history | fzf'
+history() {
+  local count=${1:-10}
+  # Ensure it's negative
+  [[ "$count" =~ ^- ]] || count="-$count"
+  builtin history -E "$count"
+}
+
+alias fhistory='history 500 | fzf'
 
 function curlp() {
   curl $@ | jq
@@ -130,6 +137,24 @@ alias cat='bat --paging=never'
 
 batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
+}
+
+delete-branches-matching() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: delete-branches-matching <pattern>"
+    return 1
+  fi
+
+  local pattern="$1"
+
+  git for-each-ref --format='%(refname:short)' refs/heads/ | grep "$pattern" | while read -r branch; do
+    # Strip ANSI escape sequences just in case
+    clean_branch=$(echo "$branch" | sed $'s/\x1B\[[0-9;]*[JKmsu]//g')
+
+    # Double check before deleting
+    echo "Deleting branch: $clean_branch"
+    git branch -d "$clean_branch"
+  done
 }
 
 alias work="timer 60m && terminal-notifier -message 'Pomodoro'\

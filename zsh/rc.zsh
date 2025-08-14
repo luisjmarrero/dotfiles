@@ -15,6 +15,7 @@ setopt hist_find_no_dups
 [ ! -f  ~/.zsh/keybindings.zsh ] || source ~/.zsh/keybindings.zsh
 [ ! -f  ~/.zsh/alias.zsh ] || source ~/.zsh/alias.zsh
 [ ! -f  ~/.zsh/exports.zsh ] || source ~/.zsh/exports.zsh
+[ ! -f  ~/.zsh/work.zsh ] || source ~/.zsh/work.zsh
 
 # plugins
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
