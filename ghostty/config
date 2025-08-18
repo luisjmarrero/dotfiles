@@ -1,0 +1,24 @@
+# font
+# font-family = MesloLGSDZ Nerd Font Mono
+font-family = JetBrains MonoJetBrainsMono Nerd Font Mono
+font-size = 13
+
+# window config
+window-padding-x = 20
+window-padding-y = 10
+
+# window config
+window-decoration = auto
+title = " "
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+
+# override for ansi cyan
+palette = 6=#56596b
+
+# theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = catppuccin-mocha
+
+window-height = 35
+window-width = 130
+resize-overlay = always

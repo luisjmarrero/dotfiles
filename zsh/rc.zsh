@@ -17,6 +17,8 @@ setopt hist_find_no_dups
 [ ! -f  ~/.zsh/exports.zsh ] || source ~/.zsh/exports.zsh
 [ ! -f  ~/.zsh/work.zsh ] || source ~/.zsh/work.zsh
 
+[ ! -f  ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh ] || source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
 # plugins
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # [ ! -f ~/.dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] || source ~/.dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -48,6 +50,12 @@ source <(fzf --zsh)
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
+
+# Enable truecolor when not inside tmux
+if [[ -z "$TMUX" ]]; then
+  export TERM=xterm-256color
+  export COLORTERM=truecolor
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

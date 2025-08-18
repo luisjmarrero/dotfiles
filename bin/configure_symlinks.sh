@@ -13,3 +13,6 @@ ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 # configure wezterm
 ln -sf ~/.dotfiles/wezterm/wezterm.lua ~/.wezterm.lua
+
+# configure ghostty
+ln -sf ~/.dotfiles/ghostty/config ~/.config/ghostty/config
