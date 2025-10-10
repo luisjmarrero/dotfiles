@@ -131,7 +131,13 @@ function bundle() {
   fi
 }
 
-alias be="bundle exec"
+# bundle
+alias be='bundle exec'
+
+# rake
+
+alias rake='noglob rake'                    # allows square brackets for rake task invocation
+alias brake='noglob bundle exec rake'       # execute the bundled rake gem
 
 alias cat='bat --paging=never'
 

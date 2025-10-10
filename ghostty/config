@@ -12,14 +12,14 @@ window-decoration = auto
 title = " "
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
-background-opacity = 0.95
+background-opacity = 0.97
 background-blur = true
 
 # override for ansi cyan
 palette = 6=#56596b
 
 # theme = dark:catppuccin-mocha,light:catppuccin-latte
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 window-height = 35
 window-width = 130

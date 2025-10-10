@@ -64,25 +64,34 @@ symbol = " "
 style = "bold mauve"
 
 [git_status]
-format = '([\[$all_status $ahead_behind\]]($style))'
+format = '([$all_status $ahead_behind]($style))'
 # style = "red bold"
 style = "bold flamingo"
 
 conflicted = ""    # nf-dev-git_merge
-# ahead      = ""    # nf-oct-arrow_up
-behind     = ""    # nf-oct-arrow_down
-diverged   = ""    # nf-dev-git_branch
+# conflicted = ""
+# ahead      = "󱞫"    # nf-oct-arrow_up
+ahead      = ""
+behind     = ""    # nf-oct-arrow_down
+diverged   = "󰁜"    # nf-dev-git_branch
 # up_to_date = "✓"
 up_to_date = ''
-untracked  = ""    # nf-oct-file
+untracked  = ""    # nf-oct-file
 stashed    = ""    # nf-oct-archive
 modified   = ""    # nf-oct-pencil
-staged     = ""    # nf-fa-plus_square
+staged     = ""    # nf-fa-plus_square
 renamed    = ""    # nf-oct-arrow_right
 deleted    = ""    # nf-oct-trashcan
 
+# untracked = " $count "
+# modified = " $count "
+# deleted = " $count "
+# staged = " $count "
+# renamed = " $count "
+# stashed = " $count "
+
 [git_metrics]
-added_style = 'bold peach'
+added_style = 'bold green'
 only_nonzero_diffs = true
 disabled = false
 format = ' [+$added]($added_style)/[-$deleted]($deleted_style) '
