@@ -15,12 +15,45 @@ macos-titlebar-style = tabs
 background-opacity = 0.97
 background-blur = true
 
-# override for ansi cyan
-palette = 6=#56596b
+# ============================================================================
+# CATPPUCCIN MOCHA
+# ============================================================================
+background = #1e1e2e
+foreground = #cdd6f4
+cursor-color = #f5c2e7
+cursor-text = #1e1e2e
 
-# theme = dark:catppuccin-mocha,light:catppuccin-latte
-theme = Catppuccin Mocha
+# Selection
+selection-background = #45475a
+selection-foreground = #cdd6f4
 
+# Palette
+palette = 0=#45475a
+palette = 1=#f38ba8
+palette = 2=#a6e3a1
+palette = 3=#f9e2af
+palette = 4=#89b4fa
+palette = 5=#f5c2e7
+palette = 6=#94e2d5
+palette = 7=#bac2de
+palette = 8=#585b70
+palette = 9=#f38ba8
+palette = 10=#a6e3a1
+palette = 11=#f9e2af
+palette = 12=#89b4fa
+palette = 13=#f5c2e7
+palette = 14=#94e2d5
+palette = 15=#a6adc8
+
+# ============================================================================
+# WINDOW SIZING & APPEARANCE
+# ============================================================================
 window-height = 35
 window-width = 130
 resize-overlay = always
+
+# ============================================================================
+# MOUSE & INPUT
+# ============================================================================
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 3

@@ -62,3 +62,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ ! -f  ~/.globo_profile ] || source ~/.globo_profile
+
+# export SSL_CERT_FILE="$(brew --prefix openssl@3.5)/etc/openssl/cert.pem"
+# export SSL_CERT_DIR="$(brew --prefix openssl@3.5)/etc/openssl/certs"
+
+export SSL_CERT_FILE=/opt/homebrew/etc/openssl@3/cert.pem
+export PATH="$HOME/.local/bin:$PATH"

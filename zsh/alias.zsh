@@ -18,7 +18,7 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gcm='git commit -m'
 alias gf='git fetch --all --prune'
-alias gpl='git pull'
+alias gpl='git pull --no-rebase --autostash'
 
 glog () {
     git log --all --graph --decorate -n 20 --oneline --pretty='%C(#f38ba8)%h%Creset -%C(#f2cdcd)%d%Creset %s %C(#a6e3a1)(%cr) %C(#89b4fa)<%an <%ae>>%Creset' --date-order
