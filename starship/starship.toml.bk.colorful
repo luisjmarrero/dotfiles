@@ -1,0 +1,98 @@
+add_newline = true
+
+format = """
+[](fg:#89b4fa)\
+$directory\
+$git_branch\
+$git_status\
+$git_metrics\
+[](fg:#a6e3a1)\
+$line_break\
+$character
+"""
+
+right_format = """
+[](fg:#94e2d5)\
+$python\
+$nodejs\
+$aws\
+[](fg:#fab387)
+"""
+
+# =========================
+# CHARACTER
+# =========================
+
+[character]
+success_symbol = "[❯](bold #a6e3a1)"
+error_symbol = "[❯](bold #f38ba8)"
+
+# =========================
+# DIRECTORY
+# =========================
+
+[directory]
+style = "fg:#1e1e2e bg:#89b4fa bold"
+format = "[ $path ]($style)[](fg:#89b4fa bg:#cba6f7)"
+truncation_length = 3
+
+# =========================
+# GIT BRANCH
+# =========================
+
+[git_branch]
+style = "fg:#1e1e2e bg:#cba6f7 bold"
+symbol = " "
+format = "[ $symbol$branch ]($style)[](fg:#cba6f7 bg:#f38ba8)"
+
+# =========================
+# GIT STATUS
+# =========================
+
+[git_status]
+style = "fg:#1e1e2e bg:#f38ba8 bold"
+format = "[ $all_status$ahead_behind ]($style)[](fg:#f38ba8 bg:#a6e3a1)"
+
+conflicted = " "
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = " "
+stashed = " "
+modified = " "
+staged = " "
+renamed = " "
+deleted = " "
+
+# =========================
+# GIT METRICS
+# =========================
+
+[git_metrics]
+disabled = false
+only_nonzero_diffs = true
+
+style = "bg:#a6e3a1"
+added_style = "fg:#11111b bg:#a6e3a1 bold"
+deleted_style = "fg:#f38ba8 bg:#a6e3a1 bold"
+
+format = "[ +$added ]($added_style)[-$deleted ]($deleted_style)"
+
+# =========================
+# RIGHT SIDE
+# =========================
+
+[python]
+symbol = " "
+style = "fg:#1e1e2e bg:#94e2d5 bold"
+format = "[ $symbol$version ]($style)[](fg:#94e2d5 bg:#a6e3a1)"
+
+[nodejs]
+symbol = " "
+style = "fg:#1e1e2e bg:#a6e3a1 bold"
+format = "[ $symbol$version ]($style)[](fg:#a6e3a1 bg:#fab387)"
+
+[aws]
+symbol = " "
+style = "fg:#1e1e2e bg:#fab387 bold"
+format = "[ $symbol$profile ]($style)"
