@@ -20,6 +20,7 @@ $python\
 $ruby\
 ${custom.rails}\
 $nodejs\
+$aws\
 ${custom.docker-enabled}"""
 
 [aws]

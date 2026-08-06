@@ -81,9 +81,9 @@ function take() {
   cd "$1"
 }
 
-if uname | grep -q 'Darwin' ; then
-    alias rm=trash # brew install trash
-fi
+# if uname | grep -q 'Darwin' ; then
+#     alias rm=trash # brew install trash
+# fi
 
 
 history() {
@@ -173,3 +173,13 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
         -appIcon '~/Pictures/pumpkin.png'\
         -sound Crystal"
 
+ftab() {
+  local path="${1:-.}"
+  # Use the absolute path to osascript just in case
+  /usr/bin/osascript -e "tell application \"Finder\" to activate" \
+            -e "tell application \"System Events\" to keystroke \"t\" using command down" \
+            -e "delay 0.3" \
+            -e "tell application \"Finder\" to set target of front window to (POSIX file \"$(cd "$path" && pwd)\")"
+}
+
+alias claude-usage="bash ~/.dotfiles/bin/claude_enterprise_usage.sh"

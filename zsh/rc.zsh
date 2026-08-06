@@ -48,8 +48,12 @@ eval "$(rbenv init - --no-rehash zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# ---- Zoxide (better cd) ----
-eval "$(zoxide init zsh)"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#6C7086,label:#CDD6F4"
 
 # Enable truecolor when not inside tmux
 if [[ -z "$TMUX" ]]; then
@@ -68,3 +72,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export SSL_CERT_FILE=/opt/homebrew/etc/openssl@3/cert.pem
 export PATH="$HOME/.local/bin:$PATH"
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+# Created by `pipx` on 2026-06-25 16:52:31
+export PATH="$PATH:/Users/luismarrero/.local/bin"
