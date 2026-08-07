@@ -3,3 +3,4 @@ zsh/work.zsh
 zsh/*.bk
 .DS_Store
 bin/claude*
+.cursor
