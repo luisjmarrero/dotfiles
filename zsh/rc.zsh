@@ -77,3 +77,12 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init zsh)"
 # Created by `pipx` on 2026-06-25 16:52:31
 export PATH="$PATH:/Users/luismarrero/.local/bin"
+
+# Added by GitButler installer
+#eval "$(but completions zsh)"
+
+# AsyncAPI CLI Autocomplete
+
+#ASYNCAPI_AC_ZSH_SETUP_PATH=/Users/luismarrero/Library/Caches/@asyncapi/cli/autocomplete/zsh_setup && test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH; # asyncapi autocomplete setup
+
+

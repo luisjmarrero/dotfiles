@@ -15,8 +15,10 @@ background-opacity = 1
 background-blur = true
 
 # theme = Dracula+
-theme = Catppuccin Mocha
+# theme = Catppuccin Mocha
 # theme = Rose Pine Moon
+#
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 
 # ============================================================================
 # WINDOW SIZING & APPEARANCE
