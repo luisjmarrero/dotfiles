@@ -1,0 +1,173 @@
+# ============================================================
+# Environment
+# ============================================================
+
+set-environment -g TMUX_PLUGIN_MANAGER_PATH ~/.tmux/plugins
+
+
+# ============================================================
+# Plugins (TPM)
+# ============================================================
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'catppuccin/tmux'
+set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'rickstaa/tmux-notify'
+
+
+# ============================================================
+# General tmux settings
+# ============================================================
+
+set -s default-terminal "tmux-256color"
+set -g history-limit 100000
+
+set -g mouse on
+
+set -g status-interval 2
+
+# Message / toast display duration (ms) - used by display-message calls
+set -g display-time 1500
+
+# Window naming
+setw -g allow-rename off
+setw -g automatic-rename off
+set -g set-titles off
+
+# Terminal features
+set -ga terminal-overrides ',xterm-256color:Tc'
+set -s extended-keys on
+set -as terminal-features 'xterm*:extkeys'
+
+# Claude / terminal passthrough
+set -g allow-passthrough off
+
+# Session behavior
+set -g detach-on-destroy off
+set -g destroy-unattached off
+
+
+# ============================================================
+# Default shell
+# ============================================================
+
+set-option -g default-command "zsh -i"
+
+
+# ============================================================
+# Splits
+# ============================================================
+
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
+unbind '"'
+unbind %
+
+
+# ============================================================
+# Catppuccin
+# ============================================================
+
+# Color-scheme-specific bits (flavor + our hand-set hex overrides for
+# cpu/ram/message/popup/clipboard-toast) live in theme-mocha.conf /
+# theme-latte.conf, picked here based on the current macOS appearance.
+# The theme watcher (LaunchAgent) re-sources the right one on the fly
+# whenever you flip Light/Dark Mode - this if-shell only covers what
+# happens at tmux startup / a manual `prefix r` reload.
+if-shell "defaults read -g AppleInterfaceStyle 2>/dev/null | grep -qi dark" \
+  "source-file ~/.dotfiles/tmux/theme-mocha.conf" \
+  "source-file ~/.dotfiles/tmux/theme-latte.conf"
+
+set -g @catppuccin_window_status_style "rounded"
+
+# Window names
+set -g @catppuccin_window_text " #W"
+set -g @catppuccin_window_default_text " #W"
+set -g @catppuccin_window_current_text " #W"
+
+# Rounded pills that don't bleed into each other
+set -g @catppuccin_status_left_separator ""
+set -g @catppuccin_status_right_separator " "
+set -g @catppuccin_status_connect_separator "no"
+
+# Used/Total instead of percentage (macOS).
+# #{l:...} keeps #() from being evaluated at set -gF time so it refreshes.
+set -g @catppuccin_ram_text " #{l:#(/Users/luismarrero/.dotfiles/tmux/scripts/ram_usage.sh)}"
+
+# Load theme before status so modules exist; TPM (below) then
+# lets tmux-cpu interpolate #{cpu_percentage} in status-right.
+run "~/.tmux/plugins/tmux/catppuccin.tmux"
+
+# Status layout
+set -g status-left-length 100
+set -g status-right-length 100
+
+set -g status-left "#{E:@catppuccin_status_session}"
+
+set -gF status-right "#{E:@catppuccin_status_cpu}"
+set -agF status-right "#{E:@catppuccin_status_ram}"
+set -agF status-right "#{E:@catppuccin_status_battery}"
+set -agF status-right "#{E:@catppuccin_status_date_time}"
+
+
+# ============================================================
+# Resurrect / Continuum
+# ============================================================
+
+set -g @resurrect-save 'S'
+set -g @resurrect-restore 'R'
+
+set -g @continuum-restore 'on'
+
+
+# ============================================================
+# Popups
+# ============================================================
+
+# popup-border-style (color) now lives in theme-mocha.conf / theme-latte.conf
+set -g popup-border-lines rounded
+
+
+# ============================================================
+# Custom bindings
+# ============================================================
+
+unbind r
+bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+
+unbind s
+bind s display-popup -E -w 50% -h 60% -T " sessions " \
+  "tmux list-sessions -F '#{session_name}' | fzf --reverse --border rounded \
+  | xargs -r tmux switch-client -t"
+
+
+# ============================================================
+# Copy mode / mouse behavior
+# ============================================================
+
+set -g focus-events off
+
+bind -n MouseDown1Pane select-pane -t = \; send-keys -M
+
+unbind -T copy-mode MouseDragEnd1Pane
+unbind -T copy-mode-vi MouseDragEnd1Pane
+
+# @clipboard_toast (color) now lives in theme-mocha.conf / theme-latte.conf
+bind -T copy-mode MouseDragEnd1Pane send-keys -X copy-pipe \; run-shell "tmux #{@clipboard_toast}"
+bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe \; run-shell "tmux #{@clipboard_toast}"
+
+# vi-mode yank (y) - same toast on keyboard copy
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel \; run-shell "tmux #{@clipboard_toast}"
+
+
+# ============================================================
+# TPM - MUST BE LAST
+# ============================================================
+
+run "~/.tmux/plugins/tpm/tpm"

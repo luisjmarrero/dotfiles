@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>local.tmux-theme-watcher</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/zsh</string>
+        <string>-lc</string>
+        <string>/Users/luismarrero/.dotfiles/tmux/scripts/theme-watcher.sh</string>
+    </array>
+    <key>WatchPaths</key>
+    <array>
+        <string>/Users/luismarrero/Library/Preferences/.GlobalPreferences.plist</string>
+    </array>
+    <key>StandardOutPath</key>
+    <string>/tmp/tmux-theme-watcher.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/tmux-theme-watcher.log</string>
+</dict>
+</plist>
